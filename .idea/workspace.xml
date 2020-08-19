@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2e91bcd9-5b4a-46f2-987c-f43373b0513b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1eUA0JEIDLnQbk8WoJpLcpP5cXO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\shoe\admin" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2e91bcd9-5b4a-46f2-987c-f43373b0513b" name="Default Changelist" comment="" />
+      <created>1594365572802</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594365572802</updated>
+      <workItem from="1594365574155" duration="3061000" />
+      <workItem from="1594372247223" duration="1411000" />
+      <workItem from="1594373692092" duration="23000" />
+      <workItem from="1594373830624" duration="3893000" />
+      <workItem from="1594416696686" duration="4724000" />
+      <workItem from="1594456058580" duration="2071000" />
+      <workItem from="1594502076181" duration="3550000" />
+      <workItem from="1594653665903" duration="4263000" />
+      <workItem from="1594716241183" duration="18693000" />
+      <workItem from="1594799287034" duration="378000" />
+      <workItem from="1594800119279" duration="607000" />
+      <workItem from="1594800745336" duration="390000" />
+      <workItem from="1594832639471" duration="4148000" />
+      <workItem from="1594885742976" duration="9126000" />
+      <workItem from="1594933006840" duration="924000" />
+      <workItem from="1595005745606" duration="17724000" />
+      <workItem from="1595059523773" duration="1842000" />
+      <workItem from="1595092109761" duration="1243000" />
+      <workItem from="1595093843554" duration="1635000" />
+      <workItem from="1595252897301" duration="4156000" />
+      <workItem from="1595407030438" duration="700000" />
+      <workItem from="1595401150302" duration="5934000" />
+      <workItem from="1595456370641" duration="6063000" />
+      <workItem from="1595465695284" duration="2595000" />
+      <workItem from="1595697402420" duration="4029000" />
+      <workItem from="1595710192227" duration="595000" />
+      <workItem from="1595949353377" duration="1797000" />
+      <workItem from="1595991742099" duration="7588000" />
+      <workItem from="1596189037931" duration="4113000" />
+      <workItem from="1596214589384" duration="632000" />
+      <workItem from="1596215830614" duration="824000" />
+      <workItem from="1596217791688" duration="3055000" />
+      <workItem from="1596269603714" duration="441000" />
+      <workItem from="1597795924835" duration="11100000" />
+      <workItem from="1597818132722" duration="6369000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="439" y="382" key="NewPhpFileDialog" timestamp="1597822108194">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="439" y="382" key="NewPhpFileDialog/0.0.1366.768/1366.0.1280.1024@0.0.1366.768" timestamp="1597799457002" />
+    <state x="1777" y="509" key="NewPhpFileDialog/0.0.1366.768/1366.0.1280.1024@1366.0.1280.1024" timestamp="1597800061964" />
+    <state x="439" y="382" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1597822108194" />
+    <state x="1614" y="237" key="run.anything.popup" timestamp="1597805467911">
+      <screen x="1366" y="0" width="1280" height="1024" />
+    </state>
+    <state x="265" y="178" key="run.anything.popup/0.0.1366.768/1366.0.1280.1024@0.0.1366.768" timestamp="1594748733007" />
+    <state x="1614" y="237" key="run.anything.popup/0.0.1366.768/1366.0.1280.1024@1366.0.1280.1024" timestamp="1597805467911" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/products.php</url>
+          <line>22</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/product.php</url>
+          <line>35</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

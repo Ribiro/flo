@@ -1,0 +1,177 @@
+<?php
+session_start();
+include 'db.php';
+//add category
+if (isset($_POST['addCat'])){
+    $name = $_POST['name'];
+
+    $sql = "INSERT INTO category (`id`, `name`) VALUES(NULL,'$name') ";
+    $query = mysqli_query($con,$sql);
+
+    if ($query){
+        $_SESSION['success']='Category added successfully';
+        header('location:category.php');
+    }
+    else{
+        $_SESSION['error']='Category not added successfully';
+        header('location:category.php');
+    }
+}
+
+
+//add product
+if (isset($_POST['addProduct'])){
+    $name = $_POST['name'];
+    $category = $_POST['category'];
+    $price = $_POST['price'];
+    $description = $_POST['description'];
+    // Get image name
+    $image = $_FILES['image']['name'];
+
+    // image file directory
+    $target = "../images/".basename($image);
+
+    $sql = "INSERT INTO products (`product_id`, `category_id`,`product_name`,`description`,`price`,`photo`) VALUES(NULL,'$category','$name','$description','$price','$image') ";
+    $query = mysqli_query($con,$sql);
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $_SESSION['success'] = "Image uploaded successfully";
+        header('location:products.php');
+    }else {
+        $_SESSION['error'] = "Failed to upload image";
+        header('location:products.php');
+    }
+    if ($query){
+        $_SESSION['success']='Product added successfully';
+        header('location:products.php');
+    }
+    else{
+        $_SESSION['error']='Product not added successfully';
+        header('location:products.php');
+    }
+}
+
+//edit product
+if (isset($_POST['editProduct'])){
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $category = $_POST['category'];
+    $price = $_POST['price'];
+    // Get image name
+    $image = $_FILES['image']['name'];
+
+    // image file directory
+    $target = "../images/".basename($image);
+
+    $sql = "UPDATE products SET `category_id`= '$category',`product_name` = '$name',`price` = '$price',`photo` = '$image' WHERE product_id = '$id' ";
+    $query = mysqli_query($con,$sql);
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $_SESSION['success'] = "Image uploaded successfully";
+        header('location:products.php');
+    }else {
+        $_SESSION['error'] = "Failed to upload image";
+        header('location:products.php');
+    }
+    if ($query){
+        $_SESSION['success']='Product updated successfully';
+        header('location:products.php');
+    }
+    else{
+        $_SESSION['error']='Product not updated';
+        header('location:products.php');
+    }
+}
+
+//register admin
+if (isset($_POST['register'])) {
+    $first = $_POST['firstname'];
+    $last = $_POST['lastname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $repassword = $_POST['repassword'];
+    $address = $_POST['address'];
+    $contact = $_POST['contact'];
+
+    $date = date('Y-m-d');
+
+    if (empty($first) || empty($last) || empty($email) || empty($password) || empty($repassword) || empty($address) || empty($contact)) {
+        $_SESSION['error'] = 'Please fill in the form';
+        header('location: register.php');
+
+    } else {
+        if (strlen($password) < 8) {
+            $_SESSION['error'] = 'Password is weak';
+            header('location: signup.php');
+            exit;
+        }
+        if ($password != $repassword) {
+            $_SESSION['error'] = 'Passwords dont match';
+            header('location: signup.php');
+            exit;
+        }
+
+        //existing email address in our database
+        $sql = "SELECT admin_id FROM admin WHERE email = '$email' LIMIT 1";
+        $check_query = mysqli_query($con, $sql);
+        $count_email = mysqli_num_rows($check_query);
+        if ($count_email > 0) {
+            $_SESSION['error'] = 'Email already exists, <a href="login.php">login</a> instead';
+            header('location:signup.php');
+
+        } else {
+
+            $sql = "INSERT INTO `admin` 
+		(`admin_id`, `fname`, `lname`, `email`, 
+		`password`,`address`,`contact`,`created_on`) 
+		VALUES (NULL, '$first', '$last', '$email', 
+		'$password','$address','$contact','$date')";
+            $run_query = mysqli_query($con, $sql);
+            $_SESSION["uid"] = mysqli_insert_id($con);
+            $_SESSION["name"] = $first;
+
+            $ip_add = getenv("REMOTE_ADDR");
+            if ($run_query) {
+
+                header('location: login.php');
+                exit;
+            }
+        }
+    }
+}
+
+//admin login
+if (isset($_POST['login'])){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM admin WHERE email = '$email'AND password = '$password'";
+    $run_query = mysqli_query($con,$sql);
+    $count = mysqli_num_rows($run_query);
+    $row = mysqli_fetch_array($run_query);
+    $_SESSION["uid"] = $row["admin_id"];
+    $_SESSION["name"] = $row["fname"];
+
+    if(empty($email) || empty($password)){
+        $_SESSION['error'] = 'Fill in the form first';
+        header('location:login.php');
+    }
+    else{
+        if ($count == 1){
+            echo 'login_success';
+            header('location: index.php');
+        }
+        else{
+            $_SESSION['error'] = 'Incorrect login credentials';
+            header('location:login.php');
+        }
+    }
+}
+//logout
+
+if (isset($_POST['logout'])){
+    unset($_SESSION['uid']);
+    unset($_SESSION['name']);
+
+    header('location:login.php');
+}
